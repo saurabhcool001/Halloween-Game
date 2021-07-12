@@ -7,8 +7,6 @@ public class RotaterScript : MonoBehaviour
     public float rotateSpeed;
     public bool onX, onY, onZ;
 
-    //public bool move;
-
     void Update()
     {
         if(onX)
@@ -25,17 +23,5 @@ public class RotaterScript : MonoBehaviour
         {
             transform.Rotate(0, 0, rotateSpeed * Time.deltaTime);
         }
-
-
-        //if(move)
-        //{
-        //    int rand = Random.Range(1, 3);
-
-        //    if(rand == 1)
-        //    {
-        //        transform.Translate(transform.position)
-        //    }
-        //}
-
     }
 }
