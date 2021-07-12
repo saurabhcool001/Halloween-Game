@@ -66,14 +66,12 @@ public class EnemyManager : MonoBehaviour
         for (int i = 0; i < no; i++)
         {
             yield return new WaitForSeconds(delay);
-            //GameObject z = Instantiate(zombiePrefab, new Vector3(Random.Range(-20, 20), 0, Random.Range(-80, 0)), Quaternion.identity);
-            //z.transform.SetParent(transform);
+
             GameObject z = Instantiate(zombiePrefab, transform);
             z.transform.position = new Vector3(Random.Range(-20, 20), 0, Random.Range(-50, 0));
             zees.Add(z);
             yield return new WaitForSeconds(1f);
             z.GetComponent<Animator>().SetBool("isWalk_" + Random.Range(3, 6), true);
-            //z.transform.position = new Vector3(z.transform.position.x, 0, z.transform.position.z);
         }
     }
 
@@ -82,11 +80,5 @@ public class EnemyManager : MonoBehaviour
     {
         zees.Remove(z);
         Destroy(z, 2.5f);
-    }
-
-    [EasyButtons.Button]
-    void Spwan()
-    {
-        StartCoroutine(SpawnWave(10, 0));
     }
 }
